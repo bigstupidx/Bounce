@@ -15,6 +15,7 @@ public class ThornController : MonoBehaviour
     public AudioClip clip;
     public AudioSource source;
 
+
     // Use this for initialization
     void Start()
     {
@@ -22,6 +23,7 @@ public class ThornController : MonoBehaviour
         numbersOfLife = GameObject.FindGameObjectWithTag("noLife").GetComponentInChildren<Text>();
         die = false;
         source = level.GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -67,6 +69,9 @@ public class ThornController : MonoBehaviour
         level.player.transform.position = level.currentCheckPoint;
         level.player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         level.player.GetComponent<CircleCollider2D>().radius = level.currentRadius;
+        level.player.transform.rotation = level.player.originalRotation;
+        level.player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        level.player.GetComponent<Rigidbody2D>().angularVelocity = 0;
         die = false;
     }
     

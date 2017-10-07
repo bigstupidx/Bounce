@@ -13,6 +13,7 @@ public class PauseButtonController : MonoBehaviour, IPointerDownHandler
     LevelController level;
     public Sprite soundOn;
     public Sprite soundOff;
+    public Button sound;
 
 
     // Use this for initialization
@@ -20,12 +21,20 @@ public class PauseButtonController : MonoBehaviour, IPointerDownHandler
     {
         Time.timeScale = 1.0f;
         level = FindObjectOfType<LevelController>();
+        if (level.sound)
+        {
+            sound.image.sprite = soundOff;
+        }
+        else
+        {
+            sound.image.sprite = soundOn;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -92,12 +101,14 @@ public class PauseButtonController : MonoBehaviour, IPointerDownHandler
             if (level.sound)
             {
                 gameObject.GetComponent<Image>().sprite = soundOn;
-                level.sound = !level.sound; ;
+                level.sound = !level.sound;
+                PlayerPrefs.SetInt("sound", 0);
             }
             else
             {
                 gameObject.GetComponent<Image>().sprite = soundOff;
                 level.sound = !level.sound;
+                PlayerPrefs.SetInt("sound", 1);
             }
         }
     }

@@ -23,9 +23,11 @@ public class dynThornController : MonoBehaviour
     public AudioClip clip;
     public AudioSource source;
 
-    public float l;
-    public float k;
-    public float m;
+    private float l;
+    private float k;
+    private float m;
+
+
 
     // Use this for initialization
     void Start()
@@ -119,7 +121,9 @@ public class dynThornController : MonoBehaviour
             level.player.bold = false;
         }
         level.player.transform.position = level.currentCheckPoint;
-        
+        level.player.transform.rotation = level.player.originalRotation;
+        level.player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        level.player.GetComponent<Rigidbody2D>().angularVelocity = 0;
         die = false;
 
     }

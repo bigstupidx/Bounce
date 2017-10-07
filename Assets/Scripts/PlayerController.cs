@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool powerGravityScale;
     public bool moveLeft, moveRight, jump;
     public Sprite bigBall;
+    public Quaternion originalRotation;
 
 
 
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
             player.GetComponent<SpriteRenderer>().sprite = bigBall;
             player.GetComponent<CircleCollider2D>().radius = 1.05f;
         }
+        originalRotation = this.transform.rotation;
     }
 
 
@@ -43,6 +45,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        powerGravity();
+    }
+
+    private void Update()
+    {
+        powerGravity();
     }
 
     public void SetMoveRight(bool moveRight)
@@ -132,6 +140,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.tag == "Ground")
@@ -180,6 +190,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
+        if(collision.gameObject.tag == "TopGround")
+        {
+            topGrounded = true;
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.tag == "Ground")
@@ -191,5 +213,17 @@ public class PlayerController : MonoBehaviour
             topGrounded = false;
         }
         
+    }
+
+    private void powerGravity()
+    {
+        if(this.powerGravityScale)
+        {
+            player.gravityScale = -2f;
+        }
+        else
+        {
+            player.gravityScale = 2f;
+        }
     }
 }

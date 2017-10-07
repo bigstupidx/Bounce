@@ -21,15 +21,16 @@ public class powerGravityController : MonoBehaviour {
         if(collision.gameObject.tag == "Player")
         {
             level.player.powerGravityScale = true;
-            level.player.GetComponent<Rigidbody2D>().gravityScale = -2;
-            WaitForIt(10F);
+            //level.player.GetComponent<Rigidbody2D>().gravityScale = -2;
+            StartCoroutine(WaitForIt(15F));
+            
         }
     }
 
     IEnumerator WaitForIt(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        level.player.GetComponent<Rigidbody2D>().gravityScale = 2;
-        level.player.powerGravityScale = false;
+        level.player.powerGravityScale = !level.player.powerGravityScale;
+
     }
 }

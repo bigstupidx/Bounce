@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelController : MonoBehaviour {
+public class LevelController : MonoBehaviour
+{
 
     public Vector3 currentCheckPoint;
     public PlayerController player;
@@ -18,6 +19,10 @@ public class LevelController : MonoBehaviour {
     public int twoStarScore;
     public int threeStarScore;
 
+    public Button btnSound;
+    public Sprite soundOn;
+    public Sprite soundOff;
+
     public bool sound;
     public int score;
 
@@ -25,10 +30,11 @@ public class LevelController : MonoBehaviour {
     Text scr;
 
     public AdsController ads;
-    
+
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         score = 0;
         scr = GameObject.FindGameObjectWithTag("Score").GetComponentInChildren<Text>();
         pauseMenu = GameObject.FindGameObjectWithTag("ShowOnPause");
@@ -44,15 +50,24 @@ public class LevelController : MonoBehaviour {
         nextLevel = nextLevelSprite.GetComponent<Animator>();
         sound = true;
         ads = FindObjectOfType<AdsController>();
-        ads.bannerView.Destroy();
+        if(sound)
+        {
+            btnSound.image.sprite = soundOff;
+        }
+        else
+        {
+            btnSound.image.sprite = soundOn;
+        }
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         scr.text = score.ToString();
         IsNextLevel();
         ShowLevelFailMenu();
-	}
+        setSound();
+    }
 
     void IsNextLevel()
     {
@@ -73,12 +88,29 @@ public class LevelController : MonoBehaviour {
 
     void ShowLevelFailMenu()
     {
-        if(isLevelFail())
+        if (isLevelFail())
         {
             Time.timeScale = 0;
             ads.ShowInterstitialAD();
             levelFailMenu.SetActive(true);
             blur.SetActive(true);
+        }
+    }
+
+    void setSound()
+    {
+        if (PlayerPrefs.GetInt("sound") == 1)
+        {
+            sound = true;
+            
+        }
+        else if (PlayerPrefs.GetInt("sound") == 0)
+        {
+            sound = false;
+        }
+        else
+        {
+            sound = true;
         }
     }
 }

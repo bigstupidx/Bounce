@@ -18,6 +18,7 @@ public class ManMenuButtonControler : MonoBehaviour, IPointerDownHandler
         if (gameObject.name == "Button Play")
         {
             SceneManager.LoadScene("ChooseLevelScene");
+            PlayerPrefs.SetInt("sound", 1);
         }
         if (gameObject.name == "Button Leaderboard")
         {
@@ -65,7 +66,7 @@ public class ManMenuButtonControler : MonoBehaviour, IPointerDownHandler
     // Use this for initialization
     void Start()
     {
-        ads.showBannerAD();
+        
     }
 
     // Update is called once per frame

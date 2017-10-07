@@ -13,6 +13,8 @@ public class SelectLevelController : MonoBehaviour, IPointerDownHandler
     //public Transform target;
     //public Vector3 current;
     //public Vector3 t;
+    public AdsController ads;
+    public BannerAds bannerAds;
 
     public void OnPointerDown(PointerEventData eventData)
     {

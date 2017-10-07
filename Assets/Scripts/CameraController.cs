@@ -19,8 +19,6 @@ public class CameraController : MonoBehaviour
     public float distanceToRightBorder;
     public float distanceToUpBorder;
     public float distanceToDownBorder;
-    public int currentfloor;
-    public int currentPlayerFloor;
 
     public float smooth;
 
@@ -60,7 +58,7 @@ public class CameraController : MonoBehaviour
         else if (distanceToLeftBorder < widthCam)
         {
             MoveCameraWithHeight();
-            transform.position = Vector3.Lerp(transform.position, begin, smooth * Time.deltaTime);
+            //transform.position = Vector3.Lerp(transform.position, begin, smooth * Time.deltaTime);
         }
     }
 

@@ -12,7 +12,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-45f405008bd199d1c05077dbc7c3cf3f Assembly-CSharp.dll:.PauseButtonController
+9b8bdd6373f4b99c7982feac497fe47e Assembly-CSharp.dll:.PauseButtonController
 fefdfc054b2755494733c822fa43bcf0 Assembly-CSharp.dll:.PumperController
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -78,7 +78,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-ce54bd2f7f4ca077a7cd7ef7924e020e Assembly-CSharp.dll:.dynThornController
+9ef14292dcd7cd38f2148c7f9e77f31c Assembly-CSharp.dll:.dynThornController
 a914bbd1fe4a8727665d80233dce9e43 Assembly-CSharp.dll:.powerjumpController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cac917711d0e84d412d48737b6fc9ae7 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -142,10 +142,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-a49770ccca701bab62aeeaf8ffe76343 Assembly-CSharp.dll:.CameraController
+d05fa2bc86460633db44191c7ada5abf Assembly-CSharp.dll:.CameraController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.powerGravityController
-2842d46ba919496a9688af262f6c8921 Assembly-CSharp.dll:.SelectLevelController
-a91da09b4654b44c806644aca4c1201c Assembly-CSharp.dll:.LevelController
+965d628147ecc493b4aea29955ac095f Assembly-CSharp.dll:.SelectLevelController
+311f0f75312c45bdfcce83a57c294e89 Assembly-CSharp.dll:.LevelController
 1cd74329afab07fe09d5b71d0cc445d0 Assembly-CSharp.dll:.ManMenuButtonControler
 21fd17367913215b95eb8ea5377f184e Assembly-CSharp.dll:.RingController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PowerJump15sController
@@ -155,4 +155,5 @@ cc042aaf5acbb5060883e3cd8b5f8e77 Assembly-CSharp.dll:.MoveButtonController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.powerSpeedController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
-15279dbf413be13b3daa415ce1c42c40 Assembly-CSharp.dll:.PlayerController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BannerAds
+953cc0220ee4b49a1c8e5f2838d2d891 Assembly-CSharp.dll:.PlayerController
