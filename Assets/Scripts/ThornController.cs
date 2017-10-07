@@ -72,6 +72,7 @@ public class ThornController : MonoBehaviour
         level.player.transform.rotation = level.player.originalRotation;
         level.player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         level.player.GetComponent<Rigidbody2D>().angularVelocity = 0;
+        level.player.GetComponent<Rigidbody2D>().gravityScale = level.player.currentGravity;
         die = false;
     }
     

@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool moveLeft, moveRight, jump;
     public Sprite bigBall;
     public Quaternion originalRotation;
+    public float currentGravity;
 
 
 
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
             player.GetComponent<CircleCollider2D>().radius = 1.05f;
         }
         originalRotation = this.transform.rotation;
+        currentGravity = player.gravityScale;
     }
 
 

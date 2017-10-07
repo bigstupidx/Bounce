@@ -32,6 +32,7 @@ public class CheckPointController : MonoBehaviour {
             level.currentCheckPoint = other.transform.position;
             level.currentSprite = level.player.GetComponent<SpriteRenderer>().sprite;
             level.currentRadius = level.player.GetComponent<CircleCollider2D>().radius;
+            level.player.currentGravity = level.player.GetComponent<Rigidbody2D>().gravityScale;
             GetComponent<SpriteRenderer>().sprite = checkpointCatched;
         }
     }
